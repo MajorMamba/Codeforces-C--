@@ -1,4 +1,3 @@
-//------Wrong Answer on test case 3---------------
 #include <bits/stdc++.h>
 int main(){
     using namespace std;
@@ -11,20 +10,15 @@ int main(){
         for (int j = 0; j < n; j++){
             cin >> arr[j];
         }
-        string q;
-        q += arr[0];
-        for (int k = 1; k < n; k++){
-            for (int l = 0; l < q.length(); l++){
-                if (arr[k] == q[l]){
+        for (int k = 0; k < n; k++){
+            for (int l = k+1; l < n; l++){
+                if (arr[k] == arr[l]){
                     repeat = true;
                     break;
                 }
             }
             if(repeat == true){
                 break;
-            }
-            else{
-                q += arr[k];
             }
         }
         if (repeat){
